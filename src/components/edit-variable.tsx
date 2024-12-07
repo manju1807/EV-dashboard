@@ -37,8 +37,8 @@ const VariableButton = ({
     className={`
       flex items-center gap-1 px-3 py-2 rounded-full border transition-all
       ${active
-        ? "border-primary bg-primary/10 text-primary"
-        : "border-border bg-card/50 text-muted-foreground hover:text-foreground"
+        ? "border-primary bg-primary/10 text-primary hover:bg-primary/20"
+        : "border-border bg-card/50 text-muted-foreground hover:bg-card hover:text-foreground"
       }
     `}
     onMouseEnter={onHover}
