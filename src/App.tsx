@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { History, Share2, Home, Bell, ShoppingBag, User, Settings } from "lucide-react";
-import DashboardChart from "./components/dashboard-chart";
+import DashboardChart from "@/components/dashboard-chart";
+import KPISection from "@/components/kpi-section";
+import EditVariablesSheet from "./components/edit-variable";
 
 export default function App() {
   return (
@@ -73,9 +75,7 @@ export default function App() {
               <Button variant="ghost" className="gap-2">
                 <History size={16} />
               </Button>
-              <Button variant="secondary" className="gap-2">
-                Edit Variables
-              </Button>
+              <EditVariablesSheet />
               <Button variant="ghost" className="gap-2">
                 <Share2 size={16} />
               </Button>
@@ -100,9 +100,9 @@ export default function App() {
           </section>
 
           {/* Dashboard Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* Graph Section */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3">
               <div className="bg-card rounded-lg border border-border p-4">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-semibold">Graphs</h2>
@@ -116,27 +116,9 @@ export default function App() {
               </div>
             </div>
 
-            {/* KPI Cards */}
-            <div>
-              <h2 className="text-xl font-semibold mb-4">Key Performance Indicators</h2>
-              <div className="grid gap-4">
-                {[
-                  { title: "Infrastructure Units", value: "€421.07" },
-                  { title: "Charging Growth", value: "33.07" },
-                  { title: "Localization change", value: "21.9%" },
-                  { title: "Fleet growth", value: "7.03%" }
-                ].map((kpi) => (
-                  <div key={kpi.title} className="bg-card rounded-lg border border-border p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="text-sm text-muted-foreground">{kpi.title}</span>
-                      <Button variant="ghost" size="icon" className="h-4 w-4 text-muted-foreground">
-                        ⓘ
-                      </Button>
-                    </div>
-                    <div className="text-2xl font-semibold">{kpi.value}</div>
-                  </div>
-                ))}
-              </div>
+            {/* KPI Section */}
+            <div className="lg:col-span-2">
+              <KPISection />
             </div>
           </div>
         </main>
