@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ev-metrics.netlify.app/sitemap.xml
